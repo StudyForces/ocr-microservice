@@ -1,4 +1,4 @@
-# OCR-Microservice
+# OCR-Subsystem
 
 Service that can recognize text and formulas from images
 
