@@ -1,3 +1,5 @@
 Pillow
 pytesseract
 opencv-python
+pika
+requests
