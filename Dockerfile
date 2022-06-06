@@ -5,7 +5,7 @@ WORKDIR /app
 COPY requirements.txt requirements.txt
 
 RUN apt update
-RUN apt install -y libsm6 libxext6 ffmpeg libfontconfig1 libxrender1 libgl1-mesa-glx
+RUN apt install -y libgl1-mesa-glx tesseract-ocr-rus
 
 RUN pip3 install -r requirements.txt
 
