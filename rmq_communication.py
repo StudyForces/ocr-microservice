@@ -30,10 +30,11 @@ def send(message: str) -> None:
 def on_message(channel, method_frame, header_frame, body) -> None:
     rmq_channel.basic_ack(method_frame.delivery_tag)
     data = json.loads(body)
-    if not utils.download_image(session, data["sourceUploadURL"], "temp.png"):
+    if not utils.download_image(session, data["url"], "temp.png"):
         return None
     rect = data["rect"]
-    data.pop("sourceUploadURL")
+    data.pop("url")
+    data.pop("rect")
     data.update([("data", dict().fromkeys(["text"], [""]))])
     data["data"]["text"] = get_text(preprocessing("temp.png", [int(rect["x"]), int(rect["y"]),
                                                                int(rect["width"]), int(rect["height"])]))
