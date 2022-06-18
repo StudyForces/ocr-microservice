@@ -6,6 +6,7 @@ name: Build and publish to GHCR
 # documentation.
 
 on:
+  workflow_dispatch:
   schedule:
     - cron: '32 1 * * *'
   push:
