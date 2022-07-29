@@ -1,6 +1,5 @@
 Pillow
 pytesseract
-opencv-python
 pika
 requests
 python-dotenv
