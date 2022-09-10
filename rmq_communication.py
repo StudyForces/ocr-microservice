@@ -38,7 +38,8 @@ def on_message(channel, method_frame, header_frame, body) -> None:
     data.pop("rect")
     data.update([("data", dict().fromkeys(["text"], [""]))])
     data["data"]["text"] = get_text(preprocessing("temp.png", [int(rect["x"]), int(rect["y"]),
-                                                               int(rect["width"]), int(rect["height"])]))
+                                                               int(rect["width"]), int(rect["height"])]))\
+        .replace('\x0c', '')
     send(json.dumps(data, separators=(',', ':'), ensure_ascii=False))
 
 
